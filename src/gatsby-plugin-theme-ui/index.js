@@ -128,7 +128,7 @@ module.exports = {
     mobileNavLink: {
       textTransform: "uppercase",
       padding: 3,
-      fontSize: [3, 4, null, null, 3],
+      fontSize: [3, 4],
       color: "primary",
       transition: "all .2s ease-in",
       textShadow: "3px 2px 4px rgba(234,176,243,1)",
@@ -269,4 +269,4 @@ module.exports = {
       borderSizing: "border-box",
     },
   },
-};
+}

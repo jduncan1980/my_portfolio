@@ -54,8 +54,9 @@ const Header = () => {
         <IconButton
           sx={{
             display: ["block", null, "none", null, null],
-            paddingRight: 5,
+            paddingRight: "3rem",
             outline: "none",
+            fontSize: 2,
           }}
           onClick={handleMobileMenu}
         >
