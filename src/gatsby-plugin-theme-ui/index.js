@@ -142,12 +142,12 @@ module.exports = {
       height: "auto",
     },
     aboutImg: {
-      width: ["90%", null, "60%", null, "50%"],
-      borderRadius: "500px",
+      width: ["100%", null, "60%", null, "50%"],
+      borderRadius: "50%",
       marginY: ["30px", null, "50px", null, "70px"],
       boxShadow: "10px 10px 48px 0px rgba(0,0,0,0.5)",
       backgroundColor: "accent",
-      padding: "20px",
+      padding: "15px",
     },
   },
   cards: {
