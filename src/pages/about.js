@@ -1,11 +1,11 @@
-import React from "react";
-import { Container, Text, Flex, Image } from "theme-ui";
-import Footer from "src/components/footer/Footer";
-import MainHeading from "../components/MainHeading";
-import data from "../data/aboutData";
-import image1 from "../images/jason1.jpg";
-import image2 from "../images/jason2.jpg";
-import image3 from "../images/jason3.jpg";
+import React from "react"
+import { Container, Text, Flex, Image } from "theme-ui"
+import Footer from "src/components/footer/Footer"
+import MainHeading from "../components/MainHeading"
+import data from "../data/aboutData"
+import image1 from "../images/jason1.jpg"
+import image2 from "../images/jason2.jpg"
+import image3 from "../images/jason3.jpg"
 
 function about() {
   return (
@@ -71,12 +71,12 @@ function about() {
                 </Flex>
               </Flex>
             </React.Fragment>
-          );
+          )
         })}
       </Flex>
       <Footer />
     </Container>
-  );
+  )
 }
 
-export default about;
+export default about

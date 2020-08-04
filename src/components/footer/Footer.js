@@ -1,18 +1,18 @@
 /** @jsx jsx */
 // import React from "react";
-import { jsx, Flex, Text, Link } from "theme-ui";
-import { FaTwitter, FaGithub, FaLinkedin, FaBandcamp } from "react-icons/fa";
-import { IconContext } from "react-icons";
-import { useSpring, animated, config } from "react-spring";
+import { jsx, Flex, Text, Link } from "theme-ui"
+import { FaTwitter, FaGithub, FaLinkedin, FaBandcamp } from "react-icons/fa"
+import { IconContext } from "react-icons"
+import { useSpring, animated, config } from "react-spring"
 
-const AFlex = animated(Flex);
+const AFlex = animated(Flex)
 export default function Footer() {
   const props = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     config: config.molasses,
-  });
-  const date = new Date();
+  })
+  const date = new Date()
 
   return (
     <AFlex
@@ -27,16 +27,14 @@ export default function Footer() {
         bottom: 0,
       }}
     >
-      <Text sx={{ fontSize: [1, 2, 3, 4] }}>
+      <Text sx={{ fontSize: [0, 1, 2, 3] }}>
         &copy;{date.getFullYear()} Jason Duncan. Built with Gatsby, Theme-UI,
         and React-Spring.
       </Text>
-      <Flex>
+      <Flex sx={{ fontSize: ["2em", null, "4em", "6em", "8em"] }}>
         <IconContext.Provider
           value={{
             style: {
-              width: "50px",
-              height: "auto",
               margin: "10px",
             },
           }}
@@ -59,5 +57,5 @@ export default function Footer() {
         </IconContext.Provider>
       </Flex>
     </AFlex>
-  );
+  )
 }

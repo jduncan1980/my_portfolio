@@ -32,14 +32,13 @@ const IndexPage = () => (
         justifyContent: ["center", "space-between"],
         alignItems: "center",
         flexWrap: "wrap",
-        marginBottom: "200px",
+        paddingBottom: ["200px", null, "250px", null, "300px"],
+        fontSize: ["8em", null, null, "10em"],
       }}
     >
       <IconContext.Provider
         value={{
           style: {
-            width: "100px",
-            height: "auto",
             margin: "30px",
           },
         }}

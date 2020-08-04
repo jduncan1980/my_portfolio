@@ -143,11 +143,11 @@ module.exports = {
     },
     aboutImg: {
       width: ["90%", null, "60%", null, "50%"],
-      borderRadius: "50%",
+      borderRadius: "500px",
       marginY: ["30px", null, "50px", null, "70px"],
       boxShadow: "10px 10px 48px 0px rgba(0,0,0,0.5)",
       backgroundColor: "accent",
-      padding: "30px",
+      padding: "20px",
     },
   },
   cards: {
@@ -215,6 +215,7 @@ module.exports = {
       flexDirection: "column",
       justifyItems: "space-evenly",
       backgroundColor: "black",
+      paddingBottom: "20%",
       zIndex: "9999",
     },
     navBarStyle: {
