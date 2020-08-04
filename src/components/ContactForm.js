@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import { Button, Label, Input, Flex, Textarea } from "theme-ui";
-import axios from "axios";
-import { Link } from "gatsby";
+import React, { useState } from "react"
+import { Button, Label, Input, Flex, Textarea } from "theme-ui"
+import axios from "axios"
+import { Link } from "gatsby"
 
 export default function ContactForm() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     message: "",
-  });
+  })
 
   const [buttonState, setButtonState] = useState({
     sent: false,
     buttonText: "Send Message",
-  });
+  })
 
   const resetForm = () => {
     setFormState({
       name: "",
       message: "",
       email: "",
-    });
-  };
+    })
+  }
 
   const sendEmail = () => {
-    setButtonState({ ...buttonState, buttonText: "Sending..." });
+    setButtonState({ ...buttonState, buttonText: "Sending..." })
     axios({
       method: "POST",
       url: "https://formspree.io/mnqgwgaq",
@@ -35,23 +35,23 @@ export default function ContactForm() {
       },
     })
       .then(res => {
-        console.log(res);
-        setButtonState({ sent: true, buttonText: "Sent!" });
+        console.log(res)
+        setButtonState({ sent: true, buttonText: "Sent!" })
       })
       .catch(error => {
-        console.log(error);
-      });
-  };
+        console.log(error)
+      })
+  }
 
   const handleChange = e => {
-    setFormState({ ...formState, [e.target.name]: e.target.value });
-  };
+    setFormState({ ...formState, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = event => {
-    event.preventDefault();
-    sendEmail();
-    resetForm();
-  };
+    event.preventDefault()
+    sendEmail()
+    resetForm()
+  }
 
   return (
     <Flex
@@ -66,7 +66,7 @@ export default function ContactForm() {
         borderRadius: "10px",
         marginY: "50px",
         color: "white",
-        marginBottom: "200px",
+        marginBottom: ["200px", "300px"],
       }}
     >
       <Label htmlFor="name">Your Name:</Label>
@@ -108,5 +108,5 @@ export default function ContactForm() {
       </Button>
       {buttonState.sent && <Link to="/">Thank You! Go back Home </Link>}
     </Flex>
-  );
+  )
 }

@@ -15,7 +15,7 @@ const Layout = ({ location, children }) => {
   `)
 
   return (
-    <>
+    <React.Fragment>
       <Header siteTitle={data.site.siteMetadata.title} />
       <TransitionProvider
         location={location}
@@ -50,7 +50,7 @@ const Layout = ({ location, children }) => {
       >
         <TransitionViews>{children}</TransitionViews>
       </TransitionProvider>
-    </>
+    </React.Fragment>
   )
 }
 

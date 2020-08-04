@@ -22,7 +22,7 @@ function about() {
         sx={{
           flexDirection: "column",
           alignItems: "center",
-          width: ["70%", null, null, "90%"],
+          width: ["80%", null, null, "90%"],
         }}
       >
         {data.map((item, index) => {

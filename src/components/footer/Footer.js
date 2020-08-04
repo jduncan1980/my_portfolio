@@ -39,19 +39,32 @@ export default function Footer() {
             },
           }}
         >
-          <Link href="https://twitter.com/JSON_Objects" variant="cardLink">
+          <Link
+            href="https://twitter.com/JSON_Objects"
+            target="_blank"
+            variant="cardLink"
+          >
             <FaTwitter />
           </Link>
-          <Link href="https://github.com/jduncan1980" variant="cardLink">
+          <Link
+            href="https://github.com/jduncan1980"
+            target="_blank"
+            variant="cardLink"
+          >
             <FaGithub />
           </Link>
           <Link
             href="https://www.linkedin.com/in/jason-duncan-five/"
+            target="_blank"
             variant="cardLink"
           >
             <FaLinkedin />
           </Link>
-          <Link href="https://jasonduncan.bandcamp.com" variant="cardLink">
+          <Link
+            href="https://jasonduncan.bandcamp.com"
+            target="_blank"
+            variant="cardLink"
+          >
             <FaBandcamp />
           </Link>
         </IconContext.Provider>
