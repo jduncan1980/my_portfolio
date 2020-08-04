@@ -6,9 +6,9 @@ const Spring = animated(Box);
 
 export default function SentAnimation() {
   const animation = useSpring({
-    from: { transform: "rotateX(180deg)", top: -100 },
-    to: { transform: "rotateX(0deg)", top: 0 },
-    config: config.slow,
+    from: { transform: "rotateX(180deg)" },
+    to: { transform: "rotateX(0deg)" },
+    config: config.molasses,
   });
   return (
     <Flex
@@ -39,13 +39,12 @@ export default function SentAnimation() {
             borderLeft: "150px solid transparent",
             borderRight: "150px solid transparent",
             borderTop: "120px solid #e2e2e2",
-            // transformStyle: "preserve-3d",
+            filter: "drop-shadow(0 0 0.075rem black)",
+            transformStyle: "preserve-3d",
             zIndex: 2,
             perspective: "1000px",
-            transformOrigin: "center",
             position: "absolute",
-            // top: -120
-            // backfaceVisibility: 'hidden'
+            transformOrigin: "center top",
           }}
         />
         <Spring
