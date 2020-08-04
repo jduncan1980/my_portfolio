@@ -17,24 +17,15 @@ const data = [
     repo: "https://github.com/buildweek-medcabinet-8/front",
     id: 1112,
   },
-  // {
-  //   title: "Weather App",
-  //   about:
-  //     "The first React app I built, it will tell you what the weather is like WHEREVER you are. Amazing. Uses CSS modules for styling, and class based components for state and lifecycle methods. Open Weather API.",
-  //   image: "weather",
-  //   live: "https://weather-app.jasonduncan.xyz/",
-  //   repo: "https://github.com/jduncan1980/weather-app-2",
-  //   id: 1113,
-  // },
   {
     title: "Github Cards",
     about:
-      "Allows a user to view a github user and see their basic info and contribution graph, along with that of all the users they are following. Seed user can be searched for by login, or you can click on the icon of any user card to switch to that user and their followers. Built with React, Material-UI, Emotion, and React-Spring for the loading animation.",
+      "Allows a user to view a github user and see their info and contribution graph, along with that users they follow. Seed user can be searched for by login, or you can click on the icon of any user card to switch to that user and their followers. Built with React, Material-UI, Emotion, and React-Spring.",
     image: "github",
     live: "https://github-usercards.jasonduncan.xyz/",
     repo: "https://github.com/jduncan1980/React-Github-User-Card",
     id: 1114,
   },
-];
+]
 
-export default data;
+export default data

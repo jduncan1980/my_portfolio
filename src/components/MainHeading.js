@@ -1,5 +1,5 @@
-import React from "react";
-import { Heading, Flex } from "theme-ui";
+import React from "react"
+import { Heading, Flex } from "theme-ui"
 
 function MainHeading(props) {
   return (
@@ -9,7 +9,7 @@ function MainHeading(props) {
         minWidth: "80%",
         justifyContent: "center",
         alignItems: "center",
-        margin: ["150px 0 75px 0", null, null, "200px 0 100px 0"],
+        margin: ["100px 0 25px 0", null, "150px 0 50px 0", "200px 0 100px 0"],
       }}
     >
       <Flex
@@ -40,7 +40,7 @@ function MainHeading(props) {
         </Flex>
       </Flex>
     </Flex>
-  );
+  )
 }
 
-export default MainHeading;
+export default MainHeading

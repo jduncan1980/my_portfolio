@@ -224,7 +224,7 @@ module.exports = {
       position: "fixed",
       top: 0,
       width: "100%",
-      minHeight: 90,
+      minHeight: ["50px", null, "90px", "100px", "110px"],
       zIndex: 9998,
       boxShadow: " 0px -2px 25px 0px rgba(0,0,0,0.55)",
     },
