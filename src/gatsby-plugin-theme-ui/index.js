@@ -34,6 +34,7 @@ module.exports = {
     secondary: "#3c22be",
     muted: "#f6f6f6",
     accent: "#ccb81e",
+    danger: "#ee89b5",
     primaryOpaque: "rgba(110,31,173,0.75)",
     secondaryOpaque: "rgba(60,34,190,0.25)",
     accentOpaque: "rgba(204,184,30,0.25)",
@@ -91,7 +92,10 @@ module.exports = {
       fontSize: ["1.5em"],
       margin: 2,
     },
-    bodyText: {},
+    error: {
+      fontSize: [2],
+      color: "danger",
+    },
   },
   links: {
     cardLink: {
@@ -270,4 +274,4 @@ module.exports = {
       borderSizing: "border-box",
     },
   },
-}
+};

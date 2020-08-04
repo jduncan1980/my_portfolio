@@ -1,12 +1,29 @@
 import React from "react";
 import SEO from "src/components/seo";
+import { Text, Container } from "theme-ui";
+import MainHeading from "../components/MainHeading";
+import Footer from "../components/footer/Footer";
+import { Link } from "gatsby";
 
 const NotFoundPage = () => (
-  <>
+  <Container
+    sx={{
+      alignItems: "center",
+      flexDirection: "column",
+      paddingBottom: ["200px", null, "200px"],
+      overflow: "hidden",
+    }}
+  >
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </>
+    <MainHeading>404- Not Found</MainHeading>
+    <Text as="p" sx={{ fontSize: [3, 4], textAlign: "center" }}>
+      Sorry, couldn't find that
+    </Text>
+    <Link to="/">
+      <Text sx={{ fontSize: [2, 3] }}>Go Home</Text>
+    </Link>
+    <Footer />
+  </Container>
 );
 
 export default NotFoundPage;

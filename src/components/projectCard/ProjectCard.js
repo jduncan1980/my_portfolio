@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx, Card, Heading, Text, Image, Flex, Link } from "theme-ui"
-import { useState } from "react"
-import { useSpring, animated } from "react-spring"
+import { jsx, Card, Heading, Text, Image, Flex, Link } from "theme-ui";
+import { useState } from "react";
+import { useSpring, animated } from "react-spring";
 
-const Flip = animated(Flex)
+const Flip = animated(Flex);
 
 function ProjectCard({ info }) {
-  const [flipped, setFlipped] = useState(false)
+  const [flipped, setFlipped] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
-  })
+  });
 
   return (
     <Card onClick={() => setFlipped(state => !state)} variant="projectCard">
@@ -77,7 +77,7 @@ function ProjectCard({ info }) {
         </Flex>
       </Flip>
     </Card>
-  )
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;

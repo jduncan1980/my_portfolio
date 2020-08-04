@@ -1,61 +1,40 @@
-import React, { useState } from "react"
-import { Button, Label, Input, Flex, Textarea } from "theme-ui"
-import axios from "axios"
-import { Link } from "gatsby"
+import React, { useState } from "react";
+import { Button, Label, Input, Flex, Textarea, Text } from "theme-ui";
+import axios from "axios";
+import { Link } from "gatsby";
+import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
+  const { handleSubmit, register, errors, formState } = useForm({
+    mode: "onChange",
+  });
 
   const [buttonState, setButtonState] = useState({
     sent: false,
     buttonText: "Send Message",
-  })
+  });
 
-  const resetForm = () => {
-    setFormState({
-      name: "",
-      message: "",
-      email: "",
-    })
-  }
-
-  const sendEmail = () => {
-    setButtonState({ ...buttonState, buttonText: "Sending..." })
+  const sendEmail = data => {
+    setButtonState({ ...buttonState, buttonText: "Sending..." });
     axios({
       method: "POST",
       url: "https://formspree.io/mnqgwgaq",
       data: {
-        name: formState.name,
-        email: formState.email,
-        message: formState.message,
+        ...data,
       },
     })
       .then(res => {
-        console.log(res)
-        setButtonState({ sent: true, buttonText: "Sent!" })
+        console.log(res);
+        setButtonState({ sent: true, buttonText: "Sent!" });
       })
       .catch(error => {
-        console.log(error)
-      })
-  }
-
-  const handleChange = e => {
-    setFormState({ ...formState, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = event => {
-    event.preventDefault()
-    sendEmail()
-    resetForm()
-  }
+        console.log(error);
+      });
+  };
 
   return (
     <Flex
-      onSubmit={handleSubmit}
+      onSubmit={() => handleSubmit(sendEmail)}
       as="form"
       sx={{
         flexDirection: "column",
@@ -70,37 +49,50 @@ export default function ContactForm() {
       }}
     >
       <Label htmlFor="name">Your Name:</Label>
-      <Input
-        name="name"
-        id="name"
-        value={formState.name}
-        onChange={handleChange}
-      />
+      <Input ref={register({ required: "Required" })} name="name" id="name" />
+      {errors.name && <Text variant="error">{errors.name.message}</Text>}
+
       <Label htmlFor="email">Your Email:</Label>
       <Input
+        ref={register({
+          required: "Required",
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: "Invalid Email Address",
+          },
+        })}
         name="email"
         id="email"
-        value={formState.email}
-        onChange={handleChange}
       />
+      {errors.email && <Text variant="error">{errors.email.message}</Text>}
+
       <Label htmlFor="message">Message:</Label>
       <Textarea
+        ref={register({ required: "Required" })}
         name="message"
         id="message"
-        value={formState.message}
-        onChange={handleChange}
       />
+      {errors.message && <Text variant="error">{errors.message.message}</Text>}
+
       <Button
         type="submit"
+        disabled={!formState.isValid}
         sx={{
           bg: "secondary",
-          marginTop: "15px",
+          marginTop: "30px",
           cursor: "pointer",
           fontSize: 2,
           transition: "all .25s ease",
+          boxShadow: "2px 2px 1px 1px rgba(232,216,232,0.25)",
 
           "&:hover": {
             transform: "scale(1.1)",
+          },
+          "&:active:": {
+            boxShadow: "none",
+          },
+          "&:disabled": {
+            bg: "gray",
           },
         }}
       >
@@ -108,5 +100,5 @@ export default function ContactForm() {
       </Button>
       {buttonState.sent && <Link to="/">Thank You! Go back Home </Link>}
     </Flex>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
-import Header from "src/components/header/Header.js"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
+import Header from "src/components/header/Header.js";
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
@@ -12,7 +12,7 @@ const Layout = ({ location, children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <React.Fragment>
@@ -30,7 +30,7 @@ const Layout = ({ location, children }) => {
             clamp: true,
           },
           onRest: () => {
-            console.log("You're a very special person...")
+            console.log("You're a very special person...");
           },
         }}
         usual={{
@@ -51,7 +51,7 @@ const Layout = ({ location, children }) => {
         <TransitionViews>{children}</TransitionViews>
       </TransitionProvider>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
