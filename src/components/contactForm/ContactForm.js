@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { Button, Label, Input, Flex, Textarea, Text } from "theme-ui";
 import axios from "axios";
-import { Link } from "gatsby";
 import { useForm } from "react-hook-form";
+import SentAnimation from "./SentAnimation";
 
 export default function ContactForm() {
-  const { handleSubmit, register, errors, formState } = useForm({
+  const { handleSubmit, register, errors, formState, reset } = useForm({
     mode: "onChange",
   });
 
   const [buttonState, setButtonState] = useState({
     sent: false,
     buttonText: "Send Message",
+    disabled: !formState.isValid,
   });
 
   const sendEmail = data => {
@@ -26,15 +27,37 @@ export default function ContactForm() {
       .then(res => {
         console.log(res);
         setButtonState({ sent: true, buttonText: "Sent!" });
+        reset();
       })
       .catch(error => {
         console.log(error);
       });
   };
+  if (buttonState.sent) {
+    return (
+      <Flex
+        sx={{
+          flexDirection: "column",
+          fontSize: [3, null, 4],
+          color: "secondary",
+          marginTop: "10px",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "50px",
+          minHeight: "100px",
+        }}
+      >
+        <Text sx={{ textAlign: "center" }}>
+          Thank You! Your message has been sent!
+        </Text>
+        <SentAnimation />
+      </Flex>
+    );
+  }
 
   return (
     <Flex
-      onSubmit={() => handleSubmit(sendEmail)}
+      onSubmit={handleSubmit(sendEmail)}
       as="form"
       sx={{
         flexDirection: "column",
@@ -76,7 +99,7 @@ export default function ContactForm() {
 
       <Button
         type="submit"
-        disabled={!formState.isValid}
+        disabled={buttonState.disabled}
         sx={{
           bg: "secondary",
           marginTop: "30px",
@@ -98,7 +121,6 @@ export default function ContactForm() {
       >
         {buttonState.buttonText}
       </Button>
-      {buttonState.sent && <Link to="/">Thank You! Go back Home </Link>}
     </Flex>
   );
 }
