@@ -1,22 +1,58 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import React from "react";
+import { Container, Heading, Text, Flex } from "theme-ui";
+import SEO from "src/components/seo";
+import MainHeading from "src/components/MainHeading";
+import { FaReact, FaJs, FaHtml5, FaCss3 } from "react-icons/fa";
+import { IconContext } from "react-icons";
+import Footer from "../components/footer/Footer";
 
 const IndexPage = () => (
-  <Layout>
+  <Flex
+    sx={{
+      flexDirection: "column",
+      alignItems: "space-between",
+      position: "relative",
+    }}
+  >
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
 
-export default IndexPage
+    <Container
+      sx={{
+        alignItems: "center",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
+      <MainHeading>You Are Here.</MainHeading>
+      <Heading as="h2" sx={{ fontSize: [3, 4, 5, 6], textAlign: "center" }}>
+        Hi. I'm Jason, and I build things.
+      </Heading>
+      <Text as="p"></Text>
+      <Flex
+        sx={{
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          marginBottom: "200px",
+        }}
+      >
+        <IconContext.Provider
+          value={{
+            style: {
+              width: "100px",
+              height: "auto",
+              margin: "10px",
+            },
+          }}
+        >
+          <FaReact />
+          <FaHtml5 />
+          <FaCss3 />
+          <FaJs />
+        </IconContext.Provider>
+      </Flex>
+    </Container>
+    <Footer />
+  </Flex>
+);
+
+export default IndexPage;
