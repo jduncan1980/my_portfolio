@@ -1,4 +1,7 @@
-const path = require("path")
+const path = require("path");
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: `Jason Duncan - Full Stack Web Developer`,
@@ -18,8 +21,17 @@ module.exports = {
     `gatsby-plugin-sharp`,
     "gatsby-plugin-theme-ui",
     "gatsby-plugin-layout",
-    "gatsby-plugin-postcss",
+    // "gatsby-plugin-postcss",
     "gatsby-plugin-transitions",
+    `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        forceFullSync: true,
+      },
+    },
     {
       resolve: "gatsby-plugin-root-import",
       options: {
@@ -40,4 +52,4 @@ module.exports = {
       },
     },
   ],
-}
+};

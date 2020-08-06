@@ -9,9 +9,6 @@ const NotFoundPage = () => (
   <Container
     sx={{
       alignItems: "center",
-      flexDirection: "column",
-      paddingBottom: ["200px", null, "200px"],
-      overflow: "hidden",
     }}
   >
     <SEO title="404: Not found" />

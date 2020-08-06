@@ -1,22 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Label, Input, Flex, Textarea, Text } from "theme-ui";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import SentAnimation from "./SentAnimation";
 
 export default function ContactForm() {
-  const { handleSubmit, register, errors, formState, reset } = useForm({
+  const { handleSubmit, register, errors, formState } = useForm({
     mode: "onChange",
   });
 
-  const [buttonState, setButtonState] = useState({
-    sent: false,
-    buttonText: "Send Message",
-    disabled: !formState.isValid,
-  });
-
   const sendEmail = data => {
-    setButtonState({ ...buttonState, buttonText: "Sending..." });
     axios({
       method: "POST",
       url: "https://formspree.io/mnqgwgaq",
@@ -26,14 +19,14 @@ export default function ContactForm() {
     })
       .then(res => {
         console.log(res);
-        setButtonState({ sent: true, buttonText: "Sent!" });
-        reset();
+        // reset();
       })
       .catch(error => {
         console.log(error);
+        alert(`Something Went Wrong! Please Try Again!`);
       });
   };
-  if (buttonState.sent) {
+  if (formState.isSubmitted) {
     return (
       <Flex
         sx={{
@@ -62,13 +55,12 @@ export default function ContactForm() {
       sx={{
         flexDirection: "column",
         alignItems: "center",
-        minWidth: ["90%", null, "60%", "50%", "40%"],
+        minWidth: ["90%", null, "60%"],
         bg: "primary",
         padding: "40px",
         borderRadius: "10px",
-        marginY: "50px",
+        marginTop: "50px",
         color: "white",
-        marginBottom: ["200px", "300px"],
       }}
     >
       <Label htmlFor="name">Your Name:</Label>
@@ -99,7 +91,7 @@ export default function ContactForm() {
 
       <Button
         type="submit"
-        disabled={buttonState.disabled}
+        disabled={!formState.isValid}
         sx={{
           bg: "secondary",
           marginTop: "30px",
@@ -119,7 +111,7 @@ export default function ContactForm() {
           },
         }}
       >
-        {buttonState.buttonText}
+        {formState.isSubmitting ? "Sending..." : "Submit"}
       </Button>
     </Flex>
   );

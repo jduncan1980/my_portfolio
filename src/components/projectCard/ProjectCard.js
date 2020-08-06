@@ -14,10 +14,41 @@ function ProjectCard({ info }) {
   });
 
   return (
-    <Card onClick={() => setFlipped(state => !state)} variant="projectCard">
+    <Card
+      onClick={() => setFlipped(state => !state)}
+      sx={{
+        marginBottom: [5],
+        width: ["95vw", "90vw", null, "42vw", "37vw"],
+        height: ["95vw", "90vw", null, "42vw", "37vw"],
+        position: "relative",
+        filter: [null, null, "saturate(.25)"],
+        transition: "all 1s ease",
+        fontSize: [1, 2, null, 3],
+
+        "&:hover": {
+          transform: [null, null, "scale(1.05)"],
+          filter: [null, null, "saturate(2)"],
+        },
+      }}
+    >
       {/*Card Front */}
       <Flip
-        className="flipContainerStyle"
+        sx={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          cursor: "pointer",
+          willChange: "transform, opacity, boxShadow",
+          transition: "box-shadow 1s ease",
+          display: "flex",
+          backgroundColor: "black",
+          border: "card",
+          borderRadius: "10px",
+          boxShadow: "15px 15px 15px -8px rgba(0,0,0,0.5)",
+          "&:hover": {
+            boxShadow: "18px 18px 18px 0px rgba(0,0,0,0.5)",
+          },
+        }}
         style={{ opacity: opacity.interpolate(o => 1 - o), transform }}
       >
         <Image
@@ -32,17 +63,40 @@ function ProjectCard({ info }) {
 
       {/*Card Back */}
       <Flip
-        className="flipContainerStyle"
         sx={{
           alignItems: "center",
           justifyContent: "space-evenly",
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          cursor: "pointer",
+          willChange: "transform, opacity, boxShadow",
+          transition: "box-shadow 1s ease",
+          display: "flex",
+          backgroundColor: "black",
+          border: "card",
+          borderRadius: "10px",
+          boxShadow: "15px 15px 15px -8px rgba(0,0,0,0.5)",
+          "&:hover": {
+            boxShadow: "18px 18px 18px 0px rgba(0,0,0,0.5)",
+          },
         }}
         style={{
           opacity,
           transform: transform.interpolate(t => `${t} rotateX(180deg)`),
         }}
       >
-        <Flex className="cardBack">
+        <Flex
+          sx={{
+            width: "95%",
+            height: "90%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            backgroundColor: "muted",
+          }}
+        >
           <Heading as="h4" variant="cardTitle">
             {info.title}
           </Heading>

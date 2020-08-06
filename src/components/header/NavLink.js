@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import React from "react";
+// import React from "react";
 import { Link } from "gatsby";
 
 const activeLinkStyle = {
@@ -8,16 +8,14 @@ const activeLinkStyle = {
   color: "#ccb81e",
 };
 
-export default function NavLink(props) {
+export default function NavLink({ name, to, styles }) {
   return (
-    <React.Fragment>
-      <Link
-        to={props.to}
-        activeStyle={activeLinkStyle}
-        sx={{ variant: `${props.linkStyle}` }}
-      >
-        {props.name}
-      </Link>
-    </React.Fragment>
+    <Link
+      to={to}
+      activeStyle={activeLinkStyle}
+      sx={{ variant: "links.navLink", ...styles }}
+    >
+      {name}
+    </Link>
   );
 }

@@ -1,5 +1,5 @@
-import React from "react"
-import { Heading, Flex } from "theme-ui"
+import React from "react";
+import { Heading, Flex } from "theme-ui";
 
 function MainHeading(props) {
   return (
@@ -14,33 +14,63 @@ function MainHeading(props) {
     >
       <Flex
         sx={{
-          // padding: "10%",
           bg: "secondaryOpaque",
           transform: "skew(-10deg, -5deg)",
           minWidth: "100%",
           justifyContent: "center",
           alignItems: "center",
-          // paddingY: ["5%"],
         }}
       >
         <Flex
           sx={{
-            // padding: "10%",
-            bg: "rgba(97, 62, 142, .75)",
+            bg: "rgba(131,12,236,0.5)",
             transform: "skew(20deg, 10deg)",
             minWidth: "100%",
             justifyContent: "center",
             alignItems: "center",
-            // paddingY: ["5%"],
           }}
         >
-          <Heading as="h1" variant="mainHeading" title={props.children}>
+          <Heading
+            as="h1"
+            sx={{
+              fontSize: [3, 4, 5, 6],
+              textTransform: "capitalize",
+              margin: ["15px 10px", null, "30px"],
+              position: "relative",
+              color: "text",
+              display: "inline",
+              transform: "skew(-10deg, -5deg)",
+              textShadow:
+                "-1px -1px 0 #000,	1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;",
+
+              "&:before": {
+                content: "attr(title)",
+                position: "absolute",
+                left: "7px",
+                top: "7px",
+                color: "secondary",
+                opacity: 0.5,
+                zIndex: -1,
+              },
+
+              "&:after": {
+                content: "attr(title)",
+                position: "absolute",
+                left: "14px",
+                top: "14px",
+                color: "accent",
+                opacity: 0.5,
+                zIndex: -2,
+              },
+            }}
+            title={props.children}
+          >
             {props.children}&nbsp;&nbsp;
           </Heading>
         </Flex>
       </Flex>
     </Flex>
-  )
+  );
 }
 
-export default MainHeading
+export default MainHeading;

@@ -1,11 +1,10 @@
 /** @jsx jsx */
+import { jsx, Flex, Close, Box } from "theme-ui";
+import NavLink from "src/components/header/NavLink";
+import items from "src/components/header/navLinkItems";
+import { useTransition, animated, config } from "react-spring";
 
-import { jsx, Flex, Close, Box } from "theme-ui"
-import NavLink from "src/components/header/NavLink"
-import items from "src/components/header/navLinkItems"
-import { useTransition, animated, config } from "react-spring"
-
-const Menu = animated(Flex)
+const Menu = animated(Flex);
 
 export default function MobileNav({ handleMobileMenu, show }) {
   const transition = useTransition(show, null, {
@@ -24,11 +23,30 @@ export default function MobileNav({ handleMobileMenu, show }) {
     unique: true,
     config: config.wobbly,
     reset: true,
-  })
+  });
 
   return transition.map(({ item, key, props }) =>
     item ? (
-      <Menu variant="mobileNavMenu" style={props} key={key} as="nav">
+      <Menu
+        sx={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          flexDirection: "column",
+          justifyItems: "space-evenly",
+          backgroundColor: "black",
+          paddingBottom: "20%",
+          zIndex: "9999",
+        }}
+        style={props}
+        key={key}
+        as="nav"
+      >
         <Close
           sx={{ position: "absolute", top: 30, right: 25, color: "white" }}
           onClick={handleMobileMenu}
@@ -50,12 +68,12 @@ export default function MobileNav({ handleMobileMenu, show }) {
                 key={link}
                 to={link === "home" ? "/" : `/${link}`}
                 name={link}
-                linkStyle="links.mobileNavLink"
+                styles={{ padding: 3, fontSize: [3, 4] }}
               />
             </Box>
-          )
+          );
         })}
       </Menu>
     ) : null
-  )
+  );
 }

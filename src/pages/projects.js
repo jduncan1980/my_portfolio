@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // import React from "react";
 import { jsx, Container } from "theme-ui";
-import CardContainer from "src/components/projectCard/CardContainer";
+import ProjectCardContainer from "src/components/projectCard/ProjectCardContainer";
 import MainHeading from "../components/MainHeading";
 import Footer from "../components/footer/Footer";
 
@@ -11,11 +11,10 @@ function projects() {
       id="projectsContainer"
       sx={{
         alignItems: "center",
-        flexDirection: "column",
       }}
     >
       <MainHeading>Some Projects.</MainHeading>
-      <CardContainer />
+      <ProjectCardContainer />
       <Footer />
     </Container>
   );

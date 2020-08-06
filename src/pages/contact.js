@@ -10,7 +10,6 @@ function contact() {
       sx={{
         alignItems: "center",
         flexDirection: "column",
-        minHeight: "100vh",
       }}
     >
       <MainHeading>Get In Touch.</MainHeading>

@@ -2,9 +2,8 @@ module.exports = {
   breakpoints: ["600px", "900px", "1200px", "1800px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
+    body: "raleway, sans-serif",
+    heading: "orbitron, sans-serif",
     monospace: "Menlo, monospace",
   },
   fontSizes: [
@@ -43,38 +42,35 @@ module.exports = {
     card: "8px solid #141414",
   },
   text: {
-    mainHeading: {
-      fontSize: ["2.25rem", 4, 5, 6, 7],
-      textTransform: "capitalize",
-      // transform: "skew(-2deg, 3deg)",
-      margin: ["30px", null, "50px"],
-      position: "relative",
-      letterSpacing: "-3px",
-      color: "black",
-      display: "inline",
-      transform: "skew(-10deg, -5deg)",
-      textShadow:
-        "-1px -1px 0 #000,	1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;",
-
-      "&:before": {
-        content: "attr(title)",
-        position: "absolute",
-        left: "-5px",
-        top: ["-15px", "-25px", "-40px"],
-        color: "primaryOpaque",
-        opacity: 0.5,
-        zIndex: -1,
+    blogLink: {
+      fontSize: [1, 2, 3],
+      color: "secondary",
+      bg: "accentOpaque",
+      padding: "20px",
+      borderRadius: "15px",
+      transition: "all .5s ease",
+      "&:hover": {
+        transform: "scale(1.1)",
       },
+    },
 
-      "&:after": {
-        content: "attr(title)",
-        position: "absolute",
-        left: "5px",
-        top: ["15px", "25px", "40px"],
-        color: "accentOpaque",
-        opacity: 0.5,
-        zIndex: -1,
+    blogPostHeading: {
+      fontSize: [3, 4, 5],
+      color: "muted",
+      marginBottom: "20px",
+      transition: "all .5s ease",
+      "&:hover": {
+        transform: "scale(1.1)",
       },
+    },
+    blogPostDate: {
+      fontSize: [0, 1, 2],
+      marginBottom: "15px",
+    },
+    blogPostExcerpt: {
+      fontSize: [1, 2, 3],
+      marginBottom: "15px",
+      textAlign: "center",
     },
     projectCardHeading: {
       writingMode: "vertical-rl",
@@ -113,11 +109,7 @@ module.exports = {
     },
     navLink: {
       textTransform: "uppercase",
-      padding: [1, 2, 3, null, null],
-      fontSize: [null, null, 2, 3, 4],
       color: "primary",
-      bg: "rgba(29,26,29,0.5)",
-      borderRadius: "10px",
       transition: "all .2s ease-in",
       textShadow: "3px 2px 4px rgba(234,176,243,1)",
       cursor: "pointer",
@@ -128,16 +120,6 @@ module.exports = {
       "&:active": {
         color: "accent",
       },
-    },
-    mobileNavLink: {
-      textTransform: "uppercase",
-      padding: 3,
-      fontSize: [3, 4],
-      color: "primary",
-      transition: "all .2s ease-in",
-      textShadow: "3px 2px 4px rgba(234,176,243,1)",
-      cursor: "pointer",
-      textDecoration: "none",
     },
   },
   images: {
@@ -154,49 +136,7 @@ module.exports = {
       padding: "15px",
     },
   },
-  cards: {
-    projectCard: {
-      marginBottom: [5],
-      width: ["95vw", "90vw", null, "42vw", "37vw"],
-      height: ["95vw", "90vw", null, "42vw", "37vw"],
-      position: "relative",
-      filter: [null, null, "saturate(.25)"],
-      transition: "all 1s ease",
-      fontSize: [1, 2, null, 3],
-
-      "&:hover": {
-        transform: [null, null, "scale(1.05)"],
-        filter: [null, null, "saturate(2)"],
-      },
-
-      "& .flipContainerStyle": {
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        cursor: "pointer",
-        willChange: "transform, opacity, boxShadow",
-        transition: "box-shadow 1s ease",
-        display: "flex",
-        backgroundColor: "black",
-        border: "card",
-        borderRadius: "10px",
-        boxShadow: "15px 15px 15px -8px rgba(0,0,0,0.5)",
-        "&:hover": {
-          boxShadow: "18px 18px 18px 0px rgba(0,0,0,0.5)",
-        },
-
-        "& .cardBack": {
-          width: "95%",
-          height: "90%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          backgroundColor: "muted",
-        },
-      },
-    },
-  },
+  cards: {},
   layout: {
     container: {
       display: "flex",
@@ -204,44 +144,11 @@ module.exports = {
       width: ["95%", null, "90%", null, "80%"],
       position: "relative",
       minHeight: "100vh",
+      overflow: "hidden",
+      paddingBottom: ["200px"],
     },
   },
-  variants: {
-    mobileNavMenu: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100vw",
-      height: "100vh",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-evenly",
-      flexDirection: "column",
-      justifyItems: "space-evenly",
-      backgroundColor: "black",
-      paddingBottom: "20%",
-      zIndex: "9999",
-    },
-    navBarStyle: {
-      alignItems: "center",
-      justifyContent: "space-between",
-      position: "fixed",
-      top: 0,
-      width: "100%",
-      minHeight: ["50px", null, "90px", "100px", "110px"],
-      zIndex: 9998,
-      boxShadow: " 0px -2px 25px 0px rgba(0,0,0,0.55)",
-    },
-    cardContainer: {
-      marginTop: "75px",
-      display: "flex",
-      flexWrap: ["nowrap", null, null, "wrap", null],
-      justifyContent: [null, null, null, "space-around"],
-      alignItems: ["center"],
-      flexDirection: ["column", null, null, "row", null],
-      width: "100%",
-    },
-  },
+  variants: {},
   forms: {
     label: {
       fontSize: [2, null, 3],
