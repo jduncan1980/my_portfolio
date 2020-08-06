@@ -10,6 +10,7 @@ function contact() {
       sx={{
         alignItems: "center",
         flexDirection: "column",
+        overflow: "visible",
       }}
     >
       <MainHeading>Get In Touch.</MainHeading>

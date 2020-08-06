@@ -11,6 +11,7 @@ function about() {
       sx={{
         alignItems: "center",
         flexDirection: "column",
+        overflow: "hidden",
       }}
     >
       <MainHeading>Me.</MainHeading>

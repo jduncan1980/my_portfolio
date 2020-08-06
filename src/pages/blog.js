@@ -39,6 +39,7 @@ function Blog() {
       sx={{
         alignItems: "center",
         justifyContent: "center",
+        overflow: "hidden",
       }}
     >
       <MainHeading>Blog.</MainHeading>
@@ -47,8 +48,9 @@ function Blog() {
       <Flex
         sx={{
           flexDirection: "column",
-          margin: ["50px 0 200px 0", "100px 0 200px 0", "100px 0 300px 0"],
+          margin: ["50px 0 0 0", "100px 0 50px 0 "],
           alignItems: "center",
+          marginBottom: "100px",
         }}
       >
         {data.allContentfulBlogPost.edges.map(edge => {

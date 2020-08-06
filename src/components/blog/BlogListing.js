@@ -13,6 +13,7 @@ export default function BlogListing({ edge }) {
         justifyContent: "center",
         width: ["80%"],
         border: "1px solid black",
+        marginBottom: "6rem",
       }}
     >
       <Flex
@@ -36,6 +37,7 @@ export default function BlogListing({ edge }) {
             border: "1px solid black",
             width: ["100%"],
             color: "muted",
+            boxShadow: "10px 10px 48px 0px rgba(0,0,0,0.5)",
           }}
         >
           <Link

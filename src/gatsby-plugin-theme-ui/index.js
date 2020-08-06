@@ -49,6 +49,7 @@ module.exports = {
       padding: "20px",
       borderRadius: "15px",
       transition: "all .5s ease",
+      boxShadow: "5px 5px 20px 0px rgba(0,0,0,0.5)",
       "&:hover": {
         transform: "scale(1.1)",
       },
@@ -141,11 +142,11 @@ module.exports = {
     container: {
       display: "flex",
       flexDirection: "column",
-      width: ["95%", null, "90%", null, "80%"],
+      width: ["100%", null, "90%", null, "80%"],
       position: "relative",
       minHeight: "100vh",
-      overflow: "hidden",
-      paddingBottom: ["200px"],
+      // overflow: "hidden",
+      paddingBottom: ["50px", "75px", "125px", "150px"],
     },
   },
   variants: {},

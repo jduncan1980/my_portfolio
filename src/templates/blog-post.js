@@ -28,7 +28,13 @@ const BlogPost = props => {
       "embedded-asset-block": node => {
         const alt = node.data.target.fields.title["en-US"];
         const url = node.data.target.fields.file["en-US"].url;
-        return <img alt={alt} src={url} />;
+        return (
+          <img
+            alt={alt}
+            src={url}
+            style={{ maxWidth: "90%", alignSelf: "center" }}
+          />
+        );
       },
     },
   };
@@ -74,12 +80,12 @@ const BlogPost = props => {
           Posted on {props.data.contentfulBlogPost.publishedDate}
         </Text>
       </Flex>
-      <Box sx={{ fontSize: [1, 2], width: "60%" }}>
+      <Flex sx={{ fontSize: [1, 2], width: "60%", flexDirection: "column" }}>
         {documentToReactComponents(
           props.data.contentfulBlogPost.body.json,
           options
         )}
-      </Box>
+      </Flex>
     </Container>
   );
 };

@@ -58,9 +58,11 @@ export default function ContactForm() {
         minWidth: ["90%", null, "60%"],
         bg: "primary",
         padding: "40px",
+        marginBottom: "100px",
         borderRadius: "10px",
         marginTop: "50px",
         color: "white",
+        boxShadow: "10px 10px 48px 0px rgba(0,0,0,0.5)",
       }}
     >
       <Label htmlFor="name">Your Name:</Label>

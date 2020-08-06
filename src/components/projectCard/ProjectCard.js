@@ -18,7 +18,7 @@ function ProjectCard({ info }) {
       onClick={() => setFlipped(state => !state)}
       sx={{
         marginBottom: [5],
-        width: ["95vw", "90vw", null, "42vw", "37vw"],
+        width: ["95vw", null, "80vw", "40vw", "35vw"],
         height: ["95vw", "90vw", null, "42vw", "37vw"],
         position: "relative",
         filter: [null, null, "saturate(.25)"],
@@ -69,16 +69,15 @@ function ProjectCard({ info }) {
           position: "absolute",
           width: "100%",
           height: "100%",
-          cursor: "pointer",
           willChange: "transform, opacity, boxShadow",
-          transition: "box-shadow 1s ease",
-          display: "flex",
+          transition: "box-shadow .5s ease",
           backgroundColor: "black",
           border: "card",
           borderRadius: "10px",
-          boxShadow: "15px 15px 15px -8px rgba(0,0,0,0.5)",
+          boxShadow: "10px 10px 10px -8px rgba(0,0,0,0.5)",
+          // overflow: "scroll",
           "&:hover": {
-            boxShadow: "18px 18px 18px 0px rgba(0,0,0,0.5)",
+            boxShadow: "12px 12px 12px 2px rgba(0,0,0,0.5)",
           },
         }}
         style={{
