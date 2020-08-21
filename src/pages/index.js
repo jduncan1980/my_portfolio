@@ -1,10 +1,12 @@
 import React from "react";
-import { Container, Heading, Text, Flex } from "theme-ui";
+import { Container, Heading, Text, Flex, Image } from "theme-ui";
 import SEO from "src/components/seo";
-import MainHeading from "src/components/MainHeading";
-import { FaReact, FaJs, FaHtml5, FaCss3 } from "react-icons/fa";
-import { IconContext } from "react-icons";
+// import MainHeading from "src/components/MainHeading";
+
 import Footer from "../components/footer/Footer";
+import avatar from "src/images/avatar.png";
+import TechIcons from "../components/icons/TechIcons";
+import WorkLink from "../components/WorkLink";
 
 const IndexPage = () => (
   <Container
@@ -13,51 +15,46 @@ const IndexPage = () => (
     }}
   >
     <SEO title="Home" />
-    <MainHeading>You Are Here.</MainHeading>
-
-    <Heading
-      as="h2"
-      sx={{
-        fontSize: [2, 3, 4],
-        textAlign: "center",
-        marginY: ["3%"],
-        padding: ".5rem",
-        // marginBottom: "100px",
-      }}
-    >
-      Hi. I'm Jason, and I build things.
-    </Heading>
 
     <Flex
       sx={{
-        justifyContent: ["center", "space-between"],
+        marginTop: ["60px", "100px"],
         alignItems: "center",
-        flexWrap: "wrap",
-        fontSize: [3, 4],
+        flexDirection: ["column-reverse", null, null, "row"],
       }}
     >
-      <IconContext.Provider
-        value={{
-          style: {
-            margin: "0 15px 0 15px",
-          },
+      <Image src={avatar} sx={{ minHeight: "300px" }} />
+
+      <Flex
+        sx={{
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
-        <FaReact />
-        <FaHtml5 />
-        <FaCss3 />
-        <FaJs />
-      </IconContext.Provider>
+        <Heading as="h2" variant="indexHeading">
+          Hi. I'm Jason, and I build things.
+        </Heading>
+        <TechIcons />
+      </Flex>
     </Flex>
+
     <Text
-      sx={{ fontSize: [1, 2, 3], textAlign: "center", padding: ["2rem 1rem"] }}
+      sx={{
+        fontSize: [1, null, 2],
+        textAlign: "center",
+        padding: ["2rem 1rem"],
+        marginTop: [0, "30px"],
+        width: ["100%", null, "60%"],
+      }}
     >
       This is my little corner of the internet, where I can show off my work. I
-      am a fairly new to development, having about 2 years of experience, and am
-      currently on month 6 of boot-camp. I am passionate about designing
-      beautiful and functional web pages.
+      am a fairly new to development, with 2 years of experience under my belt.
+      I am currently on month 6 of boot-camp (Lambda School). I am passionate
+      about designing beautiful and functional web pages, writing clean code,
+      and keeping up with the newest technologies.
     </Text>
-
+    <WorkLink />
     <Footer />
   </Container>
 );

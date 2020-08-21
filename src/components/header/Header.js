@@ -26,7 +26,7 @@ const Header = () => {
     <Flex
       as="header"
       sx={{
-        backgroundImage: `linear-gradient(90deg, rgba(19,9,46,0.7) 0%, rgba(30,35,44,0.5) 50%,rgba(9,18,46,0.7) 100%), url(${background})`,
+        backgroundImage: `linear-gradient(90deg, rgba(19,9,46,0.9) 0%, rgba(30,35,44,0.7) 50%,rgba(9,18,46,0.9) 100%), url(${background})`,
         alignItems: "center",
         justifyContent: "space-between",
         position: "fixed",

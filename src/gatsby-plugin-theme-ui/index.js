@@ -29,7 +29,7 @@ module.exports = {
   colors: {
     text: "#000",
     background: "#fff",
-    primary: "#6e1fad",
+    primary: "rgba(169,94,233,1)",
     secondary: "#3c22be",
     muted: "#f6f6f6",
     accent: "#ccb81e",
@@ -42,6 +42,14 @@ module.exports = {
     card: "8px solid #141414",
   },
   text: {
+    default: {
+      padding: ["30px"],
+      // bg: "muted",
+      color: "text",
+      fontSize: [1, null, 2],
+      textAlign: "justify",
+      width: ["95%", null, null, "50%"],
+    },
     blogLink: {
       fontSize: [1, 2, 3],
       color: "secondary",
@@ -93,6 +101,12 @@ module.exports = {
       fontSize: [2],
       color: "danger",
     },
+    indexHeading: {
+      fontSize: [2, 3, 4],
+      textAlign: "center",
+      marginY: ["3%"],
+      padding: ".5rem",
+    },
   },
   links: {
     cardLink: {
@@ -109,8 +123,9 @@ module.exports = {
       },
     },
     navLink: {
+      fontFamily: "heading",
       textTransform: "uppercase",
-      color: "primary",
+      color: "muted",
       transition: "all .2s ease-in",
       textShadow: "3px 2px 4px rgba(234,176,243,1)",
       cursor: "pointer",
@@ -122,6 +137,15 @@ module.exports = {
         color: "accent",
       },
     },
+    iconLink: {
+      textDecoration: "none",
+      color: "primary",
+      transition: "all .2s ease-in",
+      margin: 0,
+      "&:hover": {
+        color: "accent",
+      },
+    },
   },
   images: {
     cardImg: {
@@ -129,15 +153,14 @@ module.exports = {
       height: "auto",
     },
     aboutImg: {
-      width: ["100%", null, "60%", null, "50%"],
+      width: ["80%", null, null, "40%"],
       borderRadius: "50%",
       marginY: ["30px", null, "50px", null, "70px"],
       boxShadow: "10px 10px 48px 0px rgba(0,0,0,0.5)",
       backgroundColor: "accent",
-      padding: "15px",
+      padding: "3px",
     },
   },
-  cards: {},
   layout: {
     container: {
       display: "flex",
@@ -145,15 +168,21 @@ module.exports = {
       width: ["100%", null, "90%", null, "80%"],
       position: "relative",
       minHeight: "100vh",
-      // overflow: "hidden",
       paddingBottom: ["50px", "75px", "125px", "150px"],
     },
   },
-  variants: {},
+  variants: {
+    aboutSections: {
+      alignItems: ["center"],
+      justifyContent: "space-evenly",
+      marginY: ["10px", null, "25px"],
+    },
+  },
+
   forms: {
     label: {
-      fontSize: [2, null, 3],
-      marginBottom: "5px",
+      fontSize: [1, null, 2],
+      marginBottom: "2px",
     },
     input: {
       marginBottom: "10px",
@@ -162,7 +191,7 @@ module.exports = {
       fontSize: [1, null, 2],
     },
     textarea: {
-      minHeight: "150px",
+      minHeight: "100px",
       bg: "muted",
       color: "text",
       resize: "none",
@@ -174,12 +203,9 @@ module.exports = {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
-      background:
-        "linear-gradient(349deg, rgba(113,37,164,0.5) 0%, rgba(25,4,48,0.5) 68%, rgba(26,19,187,0.5) 100%)",
-      backgroundSize: "cover",
       minHeight: "100vh",
-      fontSize: "62.5%",
       borderSizing: "border-box",
+      bg: "muted",
     },
   },
 };

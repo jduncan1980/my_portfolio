@@ -12,7 +12,7 @@ export default function Nav({ handleMobileMenu }) {
         as="nav"
         sx={{
           marginRight: "15px",
-          display: ["none", "none", "inline-block"],
+          display: ["none", null, "inline-block"],
         }}
       >
         {linkItems.map(link => {
