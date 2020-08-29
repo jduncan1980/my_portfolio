@@ -42,7 +42,7 @@ function ProjectCard({ info }) {
           transition: "box-shadow 1s ease",
           display: "flex",
           backgroundColor: "black",
-          border: "card",
+          border: "8px solid black",
           borderRadius: "10px",
           boxShadow: "15px 15px 15px -8px rgba(0,0,0,0.5)",
           "&:hover": {
@@ -51,30 +51,10 @@ function ProjectCard({ info }) {
         }}
         style={{ opacity: opacity.interpolate(o => 1 - o), transform }}
       >
-        {/* <Flex
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            // bg: "black",
-            width: 0,
-            height: 0,
-            borderTop: ["125px solid black", null, "200px solid black"],
-            borderRight: [
-              "125px solid transparent",
-              null,
-              "200px solid transparent",
-            ],
-            justifyContent: "center",
-            alignItems: "center",
-            opacity: 0.8,
-          }}
-        > */}
-
-        {/* </Flex> */}
         <Text
           sx={{
             color: "muted",
+            bg: "black",
             textAlign: "center",
             fontSize: [1, null, 2],
             writingMode: "vertical-rl",

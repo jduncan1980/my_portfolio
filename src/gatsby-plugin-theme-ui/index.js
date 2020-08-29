@@ -38,9 +38,6 @@ module.exports = {
     secondaryOpaque: "rgba(60,34,190,0.25)",
     accentOpaque: "rgba(204,184,30,0.25)",
   },
-  borders: {
-    card: "8px solid #141414",
-  },
   text: {
     default: {
       padding: ["30px"],
