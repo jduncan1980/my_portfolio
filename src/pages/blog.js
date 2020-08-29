@@ -47,10 +47,11 @@ function Blog() {
 
       <Flex
         sx={{
-          flexDirection: "column",
+          flexDirection: "row",
           margin: ["50px 0 0 0", "100px 0 50px 0 "],
-          alignItems: "center",
+          alignItems: "space-evenly",
           marginBottom: "100px",
+          flexWrap: "wrap",
         }}
       >
         {data.allContentfulBlogPost.edges.map(edge => {

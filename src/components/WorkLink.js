@@ -5,9 +5,9 @@ import { jsx, Box, Heading, Text } from "theme-ui";
 import { useSpring, animated } from "react-spring";
 
 const calc = (x, y) => [
-  -(y - window.innerHeight / 2) / 20,
-  (x - window.innerWidth / 2) / 20,
-  1.1,
+  -(y - window.innerHeight / 2) / 40,
+  (x - window.innerWidth / 2) / 40,
+  1.05,
 ];
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
@@ -15,7 +15,7 @@ const trans = (x, y, s) =>
 const Wobble = animated(Box);
 
 export default function WorkLink() {
-  const [props, set] = useSpring(() => ({
+  const [styleProps, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: { mass: 5, tension: 350, friction: 40 },
   }));
@@ -23,15 +23,12 @@ export default function WorkLink() {
     <Wobble
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      style={{ transform: props.xys.interpolate(trans) }}
+      style={{ transform: styleProps.xys.interpolate(trans) }}
       sx={{
         bg: "muted",
         paddingX: "5%",
         borderRadius: "10px",
-        transition: "background-color 3s ease",
-        "&:hover": {
-          bg: "secondary",
-        },
+        transition: "background-color 2s ease",
       }}
     >
       <Link
@@ -50,9 +47,8 @@ export default function WorkLink() {
             color: "rgba(178,119,227,1)",
             marginTop: "30px",
             textAlign: "center",
-            transition: "all .4s ease",
+            transition: "all 1s ease",
             "&:hover": {
-              transform: "scale(1.1)",
               color: "accent",
             },
           }}
@@ -60,7 +56,7 @@ export default function WorkLink() {
           See My Work...
         </Heading>
         <Text
-          sx={{ textAlign: "center", marginTop: ["2%", "4%"], color: "accent" }}
+          sx={{ textAlign: "center", marginTop: ["2%", "4%"], color: "black" }}
         >
           Click here...
         </Text>

@@ -51,7 +51,7 @@ function ProjectCard({ info }) {
         }}
         style={{ opacity: opacity.interpolate(o => 1 - o), transform }}
       >
-        <Flex
+        {/* <Flex
           sx={{
             position: "absolute",
             top: 0,
@@ -69,21 +69,21 @@ function ProjectCard({ info }) {
             alignItems: "center",
             opacity: 0.8,
           }}
+        > */}
+
+        {/* </Flex> */}
+        <Text
+          sx={{
+            color: "muted",
+            textAlign: "center",
+            fontSize: [1, null, 2],
+            writingMode: "vertical-rl",
+            transform: "rotate(180deg)",
+            marginRight: "5px",
+          }}
         >
-          <Text
-            sx={{
-              color: "muted",
-              textAlign: "center",
-              fontSize: [1, null, 2],
-              position: "absolute",
-              top: [-128, null, -195],
-              left: [3, null, 4],
-              transform: "rotate(-46deg)",
-            }}
-          >
-            Click For Info
-          </Text>
-        </Flex>
+          Click For More Info
+        </Text>
         <Image
           variant="cardImg"
           src={require(`src/images/${info.image}.png`)}
@@ -96,7 +96,7 @@ function ProjectCard({ info }) {
             fontSize: [3, null, 4, 5],
             alignSelf: "center",
             color: "muted",
-            marginLeft: "10px",
+            marginLeft: ["10px", null, "20px"],
           }}
         >
           {info.title}

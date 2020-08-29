@@ -50,37 +50,6 @@ module.exports = {
       textAlign: "justify",
       width: ["95%", null, null, "50%"],
     },
-    blogLink: {
-      fontSize: [1, 2, 3],
-      color: "secondary",
-      bg: "accentOpaque",
-      padding: "20px",
-      borderRadius: "15px",
-      transition: "all .5s ease",
-      boxShadow: "5px 5px 20px 0px rgba(0,0,0,0.5)",
-      "&:hover": {
-        transform: "scale(1.1)",
-      },
-    },
-
-    blogPostHeading: {
-      fontSize: [3, 4, 5],
-      color: "muted",
-      marginBottom: "20px",
-      transition: "all .5s ease",
-      "&:hover": {
-        transform: "scale(1.1)",
-      },
-    },
-    blogPostDate: {
-      fontSize: [0, 1, 2],
-      marginBottom: "15px",
-    },
-    blogPostExcerpt: {
-      fontSize: [1, 2, 3],
-      marginBottom: "15px",
-      textAlign: "center",
-    },
     cardTitle: {
       fontSize: ["1.5em"],
       margin: 2,

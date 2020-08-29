@@ -50,10 +50,7 @@ const BlogPost = props => {
       }}
     >
       <SEO title={props.data.contentfulBlogPost.title} />
-      <Link
-        style={{ textDecoration: "none", marginBottom: "30px" }}
-        to="/blog/"
-      >
+      <Link style={{ textDecoration: "none", marginBottom: "30px" }} to="/blog">
         <Text variant="links.cardLink" sx={{ fontSize: [2, 3] }}>
           Back to Main Blog
         </Text>
@@ -61,8 +58,13 @@ const BlogPost = props => {
 
       <Flex sx={{ width: "60%", flexDirection: "column" }}>
         <Heading
-          variant="blogPostHeading"
-          sx={{ textAlign: "center", color: "primary" }}
+          sx={{
+            fontSize: [3, 4, 5],
+            color: "primary",
+            marginBottom: "1rem",
+            marginBottom: "20px",
+            textAlign: "center",
+          }}
         >
           {props.data.contentfulBlogPost.title}
         </Heading>
