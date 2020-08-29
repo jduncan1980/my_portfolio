@@ -13,7 +13,7 @@ function projects() {
         alignItems: "center",
       }}
     >
-      <MainHeading>Some Projects.</MainHeading>
+      <MainHeading>Projects.</MainHeading>
       <ProjectCardContainer />
       <Footer />
     </Container>

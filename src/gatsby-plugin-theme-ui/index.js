@@ -7,7 +7,7 @@ module.exports = {
     monospace: "Menlo, monospace",
   },
   fontSizes: [
-    ".5rem",
+    ".65rem",
     "1rem",
     "1.5rem",
     "2rem",
@@ -80,18 +80,6 @@ module.exports = {
       fontSize: [1, 2, 3],
       marginBottom: "15px",
       textAlign: "center",
-    },
-    projectCardHeading: {
-      writingMode: "vertical-rl",
-      fontSize: [3, null, 4, 5],
-      alignSelf: "center",
-      color: "muted",
-      marginX: "auto",
-    },
-    cardBody: {
-      textAlign: "justify",
-      mx: [2, 3, 4],
-      fontSize: ["1em", null, null, ".7em"],
     },
     cardTitle: {
       fontSize: ["1.5em"],

@@ -18,12 +18,12 @@ function ProjectCard({ info }) {
       onClick={() => setFlipped(state => !state)}
       sx={{
         marginBottom: [5],
-        width: ["95vw", null, "80vw", "40vw", "35vw"],
+        width: ["85vw", null, "80vw", "40vw", "35vw"],
         height: ["95vw", "90vw", null, "42vw", "37vw"],
         position: "relative",
         filter: [null, null, "saturate(.25)"],
         transition: "all 1s ease",
-        fontSize: [1, 2, null, 3],
+        fontSize: [0, 1, 2, null, 3],
 
         "&:hover": {
           transform: [null, null, "scale(1.05)"],
@@ -51,12 +51,54 @@ function ProjectCard({ info }) {
         }}
         style={{ opacity: opacity.interpolate(o => 1 - o), transform }}
       >
+        <Flex
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            // bg: "black",
+            width: 0,
+            height: 0,
+            borderTop: ["125px solid black", null, "200px solid black"],
+            borderRight: [
+              "125px solid transparent",
+              null,
+              "200px solid transparent",
+            ],
+            justifyContent: "center",
+            alignItems: "center",
+            opacity: 0.8,
+          }}
+        >
+          <Text
+            sx={{
+              color: "muted",
+              textAlign: "center",
+              fontSize: [1, null, 2],
+              position: "absolute",
+              top: [-128, null, -195],
+              left: [3, null, 4],
+              transform: "rotate(-46deg)",
+            }}
+          >
+            Click For Info
+          </Text>
+        </Flex>
         <Image
           variant="cardImg"
           src={require(`src/images/${info.image}.png`)}
         />
 
-        <Heading as="h3" variant="projectCardHeading">
+        <Heading
+          as="h3"
+          sx={{
+            writingMode: "vertical-rl",
+            fontSize: [3, null, 4, 5],
+            alignSelf: "center",
+            color: "muted",
+            marginLeft: "10px",
+          }}
+        >
           {info.title}
         </Heading>
       </Flip>
@@ -64,6 +106,7 @@ function ProjectCard({ info }) {
       {/*Card Back */}
       <Flip
         sx={{
+          cursor: "pointer",
           alignItems: "center",
           justifyContent: "space-evenly",
           position: "absolute",
@@ -75,7 +118,6 @@ function ProjectCard({ info }) {
           border: "card",
           borderRadius: "10px",
           boxShadow: "10px 10px 10px -8px rgba(0,0,0,0.5)",
-          // overflow: "scroll",
           "&:hover": {
             boxShadow: "12px 12px 12px 2px rgba(0,0,0,0.5)",
           },
@@ -100,7 +142,15 @@ function ProjectCard({ info }) {
             {info.title}
           </Heading>
 
-          <Text variant="cardBody">{info.about}</Text>
+          <Text
+            sx={{
+              textAlign: "justify",
+              mx: [2, 3, 4],
+              fontSize: ["1em", null, null, ".7em"],
+            }}
+          >
+            {info.about}
+          </Text>
 
           <Flex
             sx={{
