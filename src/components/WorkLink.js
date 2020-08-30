@@ -41,10 +41,10 @@ export default function WorkLink() {
           as="h3"
           sx={{
             fontSize: [5, 7],
-            color: "white",
+            color: "muted",
             textShadow:
               "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000",
-            color: "rgba(178,119,227,1)",
+            color: "primary",
             marginTop: "30px",
             textAlign: "center",
             transition: "all 1s ease",

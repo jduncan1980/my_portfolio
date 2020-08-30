@@ -67,6 +67,7 @@ function ProjectCard({ info }) {
         <Image
           variant="cardImg"
           src={require(`src/images/${info.image}.png`)}
+          alt={info.imageAlt}
         />
 
         <Heading
@@ -144,6 +145,7 @@ function ProjectCard({ info }) {
               href={info.live}
               variant="cardLink"
               target="_blank"
+              rel="noopener"
               sx={{ display: flipped ? "block" : "none" }}
             >
               Live Project
@@ -152,6 +154,7 @@ function ProjectCard({ info }) {
               href={info.repo}
               variant="cardLink"
               target="_blank"
+              rel="noopener"
               sx={{ display: flipped ? "block" : "none" }}
             >
               Github

@@ -95,7 +95,7 @@ module.exports = {
       textDecoration: "none",
       color: "primary",
       transition: "all .2s ease-in",
-      margin: 0,
+      margin: "0 15px",
       "&:hover": {
         color: "accent",
       },
@@ -104,7 +104,8 @@ module.exports = {
   images: {
     cardImg: {
       width: "90%",
-      height: "auto",
+      height: "90%",
+      margin: "auto",
     },
     aboutImg: {
       width: ["80%", null, null, "40%"],

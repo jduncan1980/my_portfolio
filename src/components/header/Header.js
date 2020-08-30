@@ -39,7 +39,7 @@ const Header = () => {
       color="background"
     >
       <Heading
-        as="h1"
+        as="span"
         sx={{ marginLeft: "1.5rem", fontSize: [2, null, null, 3] }}
       >
         jasonduncan.xyz

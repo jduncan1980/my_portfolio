@@ -7,6 +7,7 @@ module.exports = {
     title: `Jason Duncan - Full Stack Web Developer`,
     description: `I make things.`,
     author: `Jason Duncan`,
+    siteUrl: "https://jasonduncan.xyz",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

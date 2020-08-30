@@ -3,6 +3,7 @@
 import { jsx, Flex, Text, Link, Box } from "theme-ui";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import FooterLink from "./FooterLink";
 
 export default function Footer() {
   const date = new Date();
@@ -22,35 +23,21 @@ export default function Footer() {
       <Text sx={{ marginX: ["10px", "40px"], marginBottom: "10px" }}>
         &copy;{date.getFullYear()} Jason Duncan.
       </Text>
-      <IconContext.Provider
-        value={{
-          style: {
-            margin: "0 15px",
-          },
-        }}
-      >
-        <Link
-          href="https://twitter.com/JSON_Objects"
-          target="_blank"
-          variant="iconLink"
-        >
-          <FaTwitter />
-        </Link>
-        <Link
-          href="https://github.com/jduncan1980"
-          target="_blank"
-          variant="iconLink"
-        >
-          <FaGithub />
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/jason-duncan-five/"
-          target="_blank"
-          variant="iconLink"
-        >
-          <FaLinkedin />
-        </Link>
-      </IconContext.Provider>
+      <FooterLink
+        href="https://twitter.com/JSON_Objects"
+        name="Twitter"
+        icon={<FaTwitter />}
+      />
+      <FooterLink
+        href="https://github.com/jduncan1980"
+        name="Github"
+        icon={<FaGithub />}
+      />
+      <FooterLink
+        href="https://www.linkedin.com/in/jason-duncan-five"
+        name="LinkedIn"
+        icon={<FaLinkedin />}
+      />
     </Flex>
   );
 }

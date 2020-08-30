@@ -84,27 +84,6 @@ export default function BlogListing({ edge }) {
           >
             "{edge.node.excerpt.childMarkdownRemark.excerpt}"
           </Text>
-          <Link
-            to={`/blog/${edge.node.slug}/`}
-            style={{ textDecoration: "none" }}
-          >
-            <Text
-              sx={{
-                fontSize: [1, 2, 3],
-                color: "white",
-                bg: "text",
-                padding: "20px",
-                borderRadius: "15px",
-                transition: "all .5s ease",
-                boxShadow: "5px 5px 20px 0px rgba(0,0,0,0.5)",
-                "&:hover": {
-                  transform: "scale(1.1)",
-                },
-              }}
-            >
-              Read More
-            </Text>
-          </Link>
         </Flex>
       </Flex>
     </Flex>

@@ -3,6 +3,7 @@ import { Container } from "theme-ui";
 import MainHeading from "../components/MainHeading";
 import ContactForm from "../components/contactForm/ContactForm";
 import Footer from "../components/footer/Footer";
+import SEO from "src/components/seo";
 
 function contact() {
   return (
@@ -13,6 +14,7 @@ function contact() {
         overflow: "visible",
       }}
     >
+      <SEO title="Contact Me" />
       <MainHeading>Get In Touch.</MainHeading>
       <ContactForm />
       <Footer />

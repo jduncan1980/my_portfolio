@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Heading, Text, Flex, Image } from "theme-ui";
 import SEO from "src/components/seo";
-// import MainHeading from "src/components/MainHeading";
-
 import Footer from "../components/footer/Footer";
 import avatar from "src/images/avatar.png";
 import TechIcons from "../components/icons/TechIcons";
@@ -23,7 +21,7 @@ const IndexPage = () => (
         flexDirection: ["column-reverse", null, null, "row"],
       }}
     >
-      <Image src={avatar} sx={{ minHeight: "300px" }} />
+      <Image src={avatar} sx={{ minHeight: "300px" }} alt="Developer Avatar" />
 
       <Flex
         sx={{

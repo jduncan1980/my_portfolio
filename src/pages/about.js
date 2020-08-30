@@ -1,12 +1,11 @@
 import React from "react";
 import { Container, Flex, Text, Image } from "theme-ui";
 import Footer from "src/components/footer/Footer";
-import MainHeading from "../components/MainHeading";
+import MainHeading from "src/components/MainHeading";
+import SEO from "src/components/seo";
 import image1 from "src/images/jason1.jpg";
 import image2 from "src/images/jason2.jpg";
 import image3 from "src/images/jason3.jpg";
-// import data from "../data/aboutData";
-// import AboutCardContainer from "../components/AboutCard/AboutCardContainer";
 
 function about() {
   return (
@@ -17,13 +16,14 @@ function about() {
         overflow: "hidden",
       }}
     >
+      <SEO title="About" />
       <MainHeading>Me.</MainHeading>
       <Flex sx={{ flexDirection: "column", alignItems: "center" }}>
         <Flex
           variant="aboutSections"
           sx={{ flexDirection: ["column", null, null, "row"] }}
         >
-          <Image src={image1} variant="aboutImg" />
+          <Image src={image1} variant="aboutImg" alt="Jason" />
           <Text variant="default">
             After a decade and a half running my own dog walking business (and
             in spite of my love for furry four-legged friends), I decided it
@@ -74,13 +74,13 @@ function about() {
             and eventually enrolled in the web development program at Lambda
             School.
           </Text>
-          <Image src={image2} variant="aboutImg" />
+          <Image src={image2} variant="aboutImg" alt="Jason at Guitar Center" />
         </Flex>
         <Flex
           variant="aboutSections"
           sx={{ flexDirection: ["column", null, null, "row"] }}
         >
-          <Image src={image3} variant="aboutImg" />
+          <Image src={image3} variant="aboutImg" alt="Jason at party" />
           <Text variant="default">
             My time so far at Lambda has been nothing if not rewarding. I
             started with seemingly more experience than many of the other
