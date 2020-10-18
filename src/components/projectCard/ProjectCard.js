@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Card, Heading, Text, Image, Flex, Link } from "theme-ui";
+import { jsx, Card, Heading, Text, Flex, Link, Box } from "theme-ui";
 import { useState } from "react";
 import { useSpring, animated } from "react-spring";
 
@@ -12,8 +12,9 @@ function ProjectCard({ info }) {
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
-
+  const image = require(`src/images/${info.image}.png`);
   return (
+    
     <Card
       onClick={() => setFlipped(state => !state)}
       sx={{
@@ -21,7 +22,7 @@ function ProjectCard({ info }) {
         width: ["85vw", null, "80vw", "40vw", "35vw"],
         height: ["95vw", "90vw", null, "42vw", "37vw"],
         position: "relative",
-        filter: [null, null, "saturate(.25)"],
+        filter: [null, null, "saturate(.5)"],
         transition: "all 1s ease",
         fontSize: [0, 1, 2, null, 3],
 
@@ -41,8 +42,8 @@ function ProjectCard({ info }) {
           willChange: "transform, opacity, boxShadow",
           transition: "box-shadow 1s ease",
           display: "flex",
-          backgroundColor: "black",
-          border: "8px solid black",
+          backgroundColor: "secondary",
+          border: "1px solid black",
           borderRadius: "10px",
           boxShadow: "15px 15px 15px -8px rgba(0,0,0,0.5)",
           "&:hover": {
@@ -54,7 +55,6 @@ function ProjectCard({ info }) {
         <Text
           sx={{
             color: "muted",
-            bg: "black",
             textAlign: "center",
             fontSize: [1, null, 2],
             writingMode: "vertical-rl",
@@ -64,11 +64,8 @@ function ProjectCard({ info }) {
         >
           Click For More Info
         </Text>
-        <Image
-          variant="cardImg"
-          src={require(`src/images/${info.image}.png`)}
-          alt={info.imageAlt}
-        />
+        <Box sx={{background: `url(${image})`, width: '90%', height: '90%', margin: 'auto', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}/>
+
 
         <Heading
           as="h3"

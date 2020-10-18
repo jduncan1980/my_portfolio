@@ -20,14 +20,14 @@ const data = [
     id: 1112,
   },
   {
-    title: "Github Cards",
+    title: "Weather App",
     about:
-      "Allows a user to view a github user and see their info and contribution graph, along with that users they follow. Seed user can be searched for by login, or you can click on the icon of any user card to switch to that user and their followers. Built with React, Material-UI, Emotion, and React-Spring.",
-    image: "github",
-    imageAlt: "Github Usercards",
-    live: "https://github-usercards.jasonduncan.xyz/",
-    repo: "https://github.com/jduncan1980/React-Github-User-Card",
-    id: 1114,
+      "This was my second weather app, built because the original was slow and unattractive. I used this one as an excuse to learn Typescript. I also set up a redux store using redux toolkit for the first time, which I found to be a delightful experience compared to setting it up the old fashioned way. Also used: Theme-UI for styling, Algolia Places for the form auto-completion, and weather data courtesy of OpenWeather API.",
+    image: "weather",
+    imageAlt: "Weather App",
+    live: "https://weather.jasonduncan.xyz/",
+    repo: "https://github.com/jduncan1980/weather-app-two",
+    id: 1113,
   },
 ];
 
