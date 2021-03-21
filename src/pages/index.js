@@ -48,7 +48,7 @@ const IndexPage = () => (
     >
       This is my little corner of the internet, where I can show off my work. I
       am a fairly new to development, with 2 years of experience under my belt.
-      I am currently on month 6 of boot-camp (Lambda School). I am passionate
+      I recently completed a full-stack bootcamp (Lambda School). I am excited
       about designing beautiful and functional web pages, writing clean code,
       and keeping up with the newest technologies.
     </Text>
