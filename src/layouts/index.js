@@ -22,11 +22,10 @@ const Layout = ({ location, children }) => {
         mode="immediate"
         enter={{
           opacity: 0,
-          transform: "translate3d(0,-100vh,0)",
           config: {
-            mass: 50,
-            tension: 200,
-            friction: 150,
+            mass: 10,
+            tension: 300,
+            friction: 75,
             clamp: true,
           },
           onRest: () => {
@@ -35,15 +34,13 @@ const Layout = ({ location, children }) => {
         }}
         usual={{
           opacity: 1,
-          transform: "translate3d(0vh,0vh,0)",
         }}
         leave={{
           opacity: 0,
-          transform: "translate3d(0,100vh,0)",
           config: {
-            mass: 50,
-            tension: 200,
-            friction: 150,
+            mass: 10,
+            tension: 300,
+            friction: 75,
             clamp: true,
           },
         }}

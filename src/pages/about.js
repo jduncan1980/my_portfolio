@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Flex, Text, Image } from "theme-ui";
+import { Container, Flex, Text, Image, Link } from "theme-ui";
 import Footer from "src/components/footer/Footer";
 import MainHeading from "src/components/MainHeading";
 import SEO from "src/components/seo";
@@ -46,33 +46,33 @@ function about() {
             When writing code, it’s important to make that code completely
             reliable, and flexible enough that it can be updated when necessary.
           </Text>
-          {/* <Text variant="default"></Text> */}
         </Flex>
         <Flex
           variant="aboutSections"
           sx={{ flexDirection: ["column-reverse", null, null, "row"] }}
         >
           <Text variant="default">
-            At forty years old, I am not a digital native. I remember the online
-            experience of the early 90s. I got my first computer, a Dell 386
-            (with AOL!), and gained access to a whole new world of information.
-            Today, it’s a different world-wide-web. My earliest coding attempts
-            involved various low-budget personal sites, often laid out with
-            frames… remember frames? Back then, you just wrote HTML and inline
-            styles, and it was all you had. Now, with frameworks like React,
-            creating beautiful, interactive web experiences is a breeze. <br />
+            At forty one years old, I am not a digital native. I remember the
+            online experience of the early 90s. I got my first computer, a Dell
+            386 (with AOL!), and gained access to a whole new world of
+            information. Today, it’s a different world-wide-web. My earliest
+            coding attempts involved various low-budget personal sites, often
+            laid out with frames… remember frames? Back then, you just wrote
+            HTML and inline styles, and it was all you had. Now, with frameworks
+            like React, creating beautiful, interactive web experiences is a
+            breeze. <br />
             <br />
-            Fast-forward to the present: Before starting to grow my developer
-            skill, most of my time in front of a laptop was spent producing
-            electronic music. I like to experiment, and I started writing basic
-            scripts to control music software. Being able to build the tools you
-            need instead of having to rely on what’s readily available is a game
-            changer. It was challenging at first, but the more I worked on it,
-            the better I got, and it didn’t take long to realize that I could
-            write code for a living if I was willing to put in the work. I
-            taught myself as much as I could through various online tutorials,
-            and eventually enrolled in the web development program at Lambda
-            School.
+            Fast-forward to the present: Before I began studying web
+            development, most of my time in front of a laptop was spent
+            producing electronic music. I like to experiment, and I started
+            writing basic scripts to control music software. Being able to build
+            the tools you need instead of having to rely on what’s readily
+            available is a game changer. It was challenging at first, but the
+            more I worked on it, the better I got, and it didn’t take long to
+            realize that I could write code for a living if I was willing to put
+            in the work. I taught myself as much as I could through various
+            online tutorials, and eventually enrolled in the web development
+            program at Lambda School.
           </Text>
           <Image src={image2} variant="aboutImg" alt="Jason at Guitar Center" />
         </Flex>
@@ -82,28 +82,34 @@ function about() {
         >
           <Image src={image3} variant="aboutImg" alt="Jason at party" />
           <Text variant="default">
-            My time so far at Lambda has been nothing if not rewarding. I
-            started with seemingly more experience than many of the other
-            students, some of whom come to me for help when their team leads
-            aren’t available. I try to make sure they actually understand what
-            I’m explaining. “Center a persons Div, and they will have a website.
-            Teach that person Flex-box, and they can be a web developer” is a
-            silly joke you might hear from your dad, but I really enjoy teaching
-            others, and find I often learn myself in the process. I plan to
-            apply for a team lead position at Lambda in the near future,
-            something both my team lead and the section lead of my cohort have
-            encouraged.
+            My time at Lambda was incredibly rewarding. I started with seemingly
+            more experience than many of the other students, some of whom came
+            to me for help when their team leads weren’t available. I try to
+            make sure they actually understand what I’m explaining. “Center
+            someones Div, and they will have a website. Teach that person
+            Flexbox, and they can be a web developer” is a silly joke you might
+            hear from your dad, but I really enjoy teaching others, and find I
+            often learn myself in the process. I was encouraged to apply for a
+            team lead position at Lambda by both my team lead and the section
+            lead of my cohort, but unfortunately, the program was discontinued
+            before I got the chance.
             <br />
             <br />
-            Currently, I’m working on refining my React skills, and learning to
-            write better tests. I also like to experiment with CSS-in-JS
-            libraries, including Material UI, Styled Components/System, and
-            Theme-UI. I’ve been developing a web-based drum machine app using
-            the ToneJS library, which is the most challenging thing I’ve worked
-            on to date. I’d ideally like to work at a music technology company.
-            Music is my other big passion, and who doesn’t want to combine all
-            the things they are passionate about into one grand unified passion?
+            Currently, I'm practicing on Data Structures and Algorithms, and
+            searching for my first role in tech. I find the job search process
+            much more difficult than the actual coding, but my attitude is that
+            if I put in the work, I can't fail.
           </Text>
+        </Flex>
+        <Flex sx={{ alignItems: "center" }}>
+          <Link
+            href="https://docs.google.com/document/d/1cloWMn1YfQTBH9n4-cMT7WqiiEu62aby42e9zgN6434/edit?usp=sharing"
+            variant="cardLink"
+            target="_blank"
+            rel="noopener"
+          >
+            My Resume
+          </Link>
         </Flex>
       </Flex>
       <Footer />
